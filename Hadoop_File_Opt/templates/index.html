@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学习Django</title>
+    {#注意这里的static是在settings.py里配置的引用指针#}
+    {% load static %}
+    <link rel="stylesheet" href="{% static "/css/test.css" %}">
+</head>
+<body>
+<div class="lzhdiv">
+    这是一个HTML页面,放在templates目录下
+</div>
+</body>
+</html>
