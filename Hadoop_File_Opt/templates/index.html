@@ -1,15 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>学习Django</title>
-    {#注意这里的static是在settings.py里配置的引用指针#}
-    {% load static %}
-    <link rel="stylesheet" href="{% static "/css/test.css" %}">
+    <meta charset="UTF-8" />
+    <title> arguments</title>
+    <link rel="stylesheet" type="text/css" href="http://unpkg.com/iview/dist/styles/iview.css">
+    <script type="text/javascript" src="http://vuejs.org/js/vue.min.js"></script>
+    <script type="text/javascript" src="http://unpkg.com/iview/dist/iview.min.js"></script>
 </head>
 <body>
-<div class="lzhdiv">
-    这是一个HTML页面,放在templates目录下
+  <h2 style="text-align:center;margin:30px">文件上传及下载</h2>
+<div id="btn" style="width:50%;margin:0 auto;padding:30px">
+  <form action="/upload" method="POST">
+      {% csrf_token %}
+      <i-formItem>
+      <i-input name="q" v-model="up_value" placeholder="Enter something..." style="width: 300px" />
+      </i-formItem>
+      <i-formItem>
+      <i-button type="primary" @click="handleSubmit" ><button type="submit">upload</button></i-button>
+      </i-formItem>
+  </form>
 </div>
+
+<div style="width:50%;margin:0 auto;padding:30px"> 
+  <form>
+      <i-formItem>
+          <i-input name="q" v-model="down_value" placeholder="Enter something..." style="width: 300px" />
+      </i-formItem>
+      <i-formItem>
+          <i-button type="primary">upload</i-button>
+      </i-formItem>
+  </form>
+</div>
+
+<div>{{ res }}</div>
 </body>
+<script>
+    new Vue({
+    el: '#btn',
+    data: {
+      up_value:'',
+      down_value:'',
+    },
+    methods:{
+      handleSubmit(){//确认方法
+     }
+   }
+  })
+    </script>
 </html>

@@ -1,4 +1,4 @@
-"""Hadoop_File_Opt URL Configuration
+"""Hadoop URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.1/topics/http/urls/
@@ -15,12 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-import Operate.views as views
-from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^index',views.index),
-    url(r'^download',views.DownLoad),
-    url(r'^upload$',views.UpLoad),
 ]

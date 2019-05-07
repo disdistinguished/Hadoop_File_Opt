@@ -1,6 +1,9 @@
+#!/usr/local/bin/python3
+
 from __future__ import absolute_import, unicode_literals
 from celery import shared_task
 from pyhdfs import HdfsClient
+import os
  
  
 @shared_task
@@ -21,6 +24,8 @@ def Copy_To_Local(file):
     从Hadoop上下载文件
     '''
     client=HdfsClient(hosts='localhost:50070')#hdfs地址
+    if os.path.exists(file):
+        os.remove(file)
     client.copy_to_local(file,'./')
  
  
