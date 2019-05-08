@@ -126,5 +126,6 @@ STATICFILES_DIRS = (
     # 
     os.path.join(BASE_DIR, 'static'),
 )
-CELERY_BROKER_URL = 'redis://localhost'
-CELERY_RESULT_BACKEN = 'redis://localhost'
+
+BROKER_URL = 'redis://localhost'
+CELERY_RESULT_BACKEND = 'redis://localhost'
