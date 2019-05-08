@@ -265,5 +265,8 @@ def DownLoad(request):
 ```
 celery -A Hadoop_File_Opt worker -l info
 ```
+
+![image](images/celery_ondj.png)
+
 在第一个输入框中输入要提交的本地文件路径（可以在file添加一个固定路径，输入文件名），点击按钮，文件提交到hdfs的/tmp/te/
 在第二个输入框输入要瞎子到本地的文件名，点击按钮，文件从/tmp/te/下载到当前目录./（可以指定其他目录）
