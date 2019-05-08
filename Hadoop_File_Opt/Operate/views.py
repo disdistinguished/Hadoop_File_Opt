@@ -13,20 +13,23 @@ def UpLoad(request):
     '''
     文件上传
     '''
+
     message = {}
-    lient=HdfsClient(hosts='localhost:50070')
-    # #连接到hdfs
+    # lient=HdfsClient(hosts='localhost:50070')
+    # # #连接到hdfs
     file = request.POST['q']
-    #接受网页提交的文件名
-    h_file = ('/tmp/te/%s'%file)
-    tasks.Copy_From_Local.delay(file)
-    #使用celery上传文件
-    if client.exists(h_file):
-        message['res'] = 'UpLoad success'
-    else:
-        message['res'] = 'Upload fail'
-    #判读是否上传成功，返回结果
-    message['res'] = 'UpLoad success'
+    # #接受网页提交的文件名
+    # h_file = ('/tmp/te/%s'%file)
+    # tasks.Copy_From_Local.delay(file)
+    # #使用celery上传文件
+    # if client.exists(h_file):
+    #     message['res'] = 'UpLoad success'
+    # else:
+    #     message['res'] = 'Upload fail'
+    # #判读是否上传成功，返回结果
+    # res = tasks.add.delay(228,24)
+    # print(res)
+    message['res_u'] = 'UpLoad success'
     print(file)
     return render(request, "index.html",message)
 
@@ -44,6 +47,6 @@ def DownLoad(request):
     # else:
     #     message['res'] = 'Download fail'
     # #判读是否下载成功，返回结果
-    message['res'] = 'Download fail'
+    message['res_d'] = 'Download fail'
     return render(request, "index.html",message)
 

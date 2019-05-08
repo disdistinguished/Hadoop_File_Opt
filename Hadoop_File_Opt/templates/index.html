@@ -16,30 +16,31 @@
       <i-input name="q" v-model="up_value" placeholder="Enter something..." style="width: 300px" />
       </i-formItem>
       <i-formItem>
-      <i-button type="primary" @click="handleSubmit" ><button type="submit">upload</button></i-button>
+      <i-button type="primary" @click="handleSubmit" >upload</i-button>
       </i-formItem>
   </form>
-</div>
-
-<div style="width:50%;margin:0 auto;padding:30px"> 
-  <form>
+  <div style="color:red">{{ res_u }}</div>
+  <form style="margin-top:30px">
       <i-formItem>
           <i-input name="q" v-model="down_value" placeholder="Enter something..." style="width: 300px" />
       </i-formItem>
       <i-formItem>
-          <i-button type="primary">upload</i-button>
+          <i-button type="primary">downoad</i-button>
       </i-formItem>
   </form>
+<div style="color:red">{{ res_d }}</div>
 </div>
 
-<div>{{ res }}</div>
+
 </body>
 <script>
     new Vue({
     el: '#btn',
-    data: {
+    data(){
+      return{
       up_value:'',
       down_value:'',
+    }
     },
     methods:{
       handleSubmit(){//确认方法

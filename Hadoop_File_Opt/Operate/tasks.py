@@ -28,4 +28,6 @@ def Copy_To_Local(file):
         os.remove(file)
     client.copy_to_local(file,'./')
  
- 
+@shared_task
+def add(x, y):
+    return x + y
